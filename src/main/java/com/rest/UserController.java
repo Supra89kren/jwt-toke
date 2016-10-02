@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Created by Администратор on 02.10.2016.
- */
 @RestController
 public class UserController {
 
