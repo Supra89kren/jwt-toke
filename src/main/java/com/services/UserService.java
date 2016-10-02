@@ -22,7 +22,7 @@ public class UserService {
     }
 
     public User getUserById(Long userId) {
-        return userRepository.getOne(userId);
+        return userRepository.findOne(userId);
     }
 
     public List<User> getAllUsers() {

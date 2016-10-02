@@ -22,7 +22,7 @@ public class UserController {
         return "Kalabala message";
     }
 
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
     public ResponseEntity<User> getUser(@PathVariable Long userId){
         User user = userService.getUserById(userId);
         return new ResponseEntity<>(user, HttpStatus.OK);
@@ -34,7 +34,7 @@ public class UserController {
         return new ResponseEntity<>(allUsers,HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/create-user", method = RequestMethod.POST)
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
     public ResponseEntity<User> createUser(@RequestBody CreateUserDto createUserDto){
         User user = userService.createUser(createUserDto);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
