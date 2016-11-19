@@ -4,43 +4,64 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "USERS")
-public class User implements Serializable{
-    @Id
-    @GeneratedValue
-    private Long id;
+@Table(name = "USER")
+public class User implements Serializable {
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    @Column(name = "USER_NAME")
-    private String username;
+	@Column(name = "FIRST_NAME")
+	private String firstName;
 
-    @Column(name = "PASSWORD")
-    private String password;
+	@Column(name = "LAST_NAME")
+	private String lastName;
 
-    public Long getId() {
-        return id;
-    }
+	@Column(name = "EMAIL")
+	private String email;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	@Column(name = "PASSWORD")
+	private String password;
 
-    public String getUsername() {
-        return username;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public User() {
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public User() {
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    }
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 }

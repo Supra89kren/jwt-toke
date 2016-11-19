@@ -11,21 +11,23 @@ import java.util.List;
 @Service
 public class UserService {
 
-    @Autowired
-    UserRepository userRepository;
+	@Autowired
+	UserRepository userRepository;
 
-    public User createUser(CreateUserDto createUserDto) {
-        User user = new User();
-        user.setUsername(createUserDto.getUsername());
-        user.setPassword(createUserDto.getPassword());
-        return userRepository.save(user);
-    }
+	public User createUser(CreateUserDto createUserDto) {
+		User user = new User();
+		user.setEmail(createUserDto.getEmail());
+		user.setLastName(createUserDto.getLastName());
+		user.setFirstName(createUserDto.getFirstName());
+		user.setPassword(createUserDto.getPassword());
+		return userRepository.save(user);
+	}
 
-    public User getUserById(Long userId) {
-        return userRepository.findOne(userId);
-    }
+	public User getUserById(Long userId) {
+		return userRepository.findOne(userId);
+	}
 
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
-    }
+	public List<User> getAllUsers() {
+		return userRepository.findAll();
+	}
 }
